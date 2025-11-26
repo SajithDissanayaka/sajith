@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajith Dissanayaka - Portfolio & Career Mentor</title>
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+    --bg-dark: #0a1628;
+    --bg-card: #1a2942;
+    --text: #ffffff;
+    --blue-primary: #4db8ff;
+    --blue-secondary: #66c2ff;
+    --blue-glow: rgba(77, 184, 255, 0.5);
+    --purple-accent: #7c3aed;
+    --gradient-1: linear-gradient(135deg, #4db8ff 0%, #66c2ff 100%);
+    --gradient-2: linear-gradient(135deg, #66c2ff 0%, #80ccff 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top, rgba(77, 184, 255, 0.12), transparent),
+                radial-gradient(ellipse at bottom, rgba(124, 58, 237, 0.08), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* Animated Background Orbs */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 20s infinite ease-in-out;
+}
+
+.orb1 {
+    width: 500px;
+    height: 500px;
+    background: var(--blue-primary);
+    top: -250px;
+    left: -250px;
+    animation-delay: 0s;
+}
+
+.orb2 {
+    width: 400px;
+    height: 400px;
+    background: var(--purple-accent);
+    bottom: -200px;
+    right: -200px;
+    animation-delay: 5s;
+}
+
+.orb3 {
+    width: 350px;
+    height: 350px;
+    background: var(--blue-secondary);
+    top: 50%;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(100px, -100px) scale(1.1);
+    }
+    66% {
+        transform: translate(-50px, 100px) scale(0.9);
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(26, 41, 66, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(77, 184, 255, 0.2);
+    animation: slideDown 1s ease-out 0.5s forwards;
+    transform: translateY(-100%);
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.navbar .logo {
+    font-size: 32px;
+    font-weight: 800;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 45px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-1);
+    transition: width 0.3s;
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li.active a::after {
+    width: 100%;
+}
+
+.navbar ul li a:hover,
+.navbar ul li.active a {
+    color: var(--blue-primary);
+}
+
+/* Hero Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 140px 9% 50px;
+    gap: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.home-info {
+    animation: fadeInLeft 1s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.home-info h1 {
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #66c2ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.home-info h2 {
+    font-size: 38px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 15px 0 25px;
+    font-weight: 700;
+}
+
+.home-info p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 45px;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.btn-sci {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 16px 45px;
+    border: none;
+    border-radius: 50px;
+    background: var(--gradient-1);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 10px 30px var(--blue-glow);
+    transition: all 0.4s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--blue-glow);
+}
+
+/* Social Icons */
+.sci {
+    display: flex;
+    gap: 18px;
+    flex-wrap: nowrap;
+}
+
+.sci a {
+    width: 52px;
+    height: 52px;
+    border: 2.5px solid var(--blue-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: var(--blue-primary);
+    box-shadow: 0 0 20px var(--blue-glow);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    transform: scale(0);
+    transition: transform 0.4s;
+    border-radius: 50%;
+}
+
+.sci a:hover::before {
+    transform: scale(1);
+}
+
+.sci a:hover {
+    color: #ffffff;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px var(--blue-glow);
+}
+
+.sci a i {
+    position: relative;
+    z-index: 1;
+}
+
+/* Profile Image */
+.home-img {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    flex-shrink: 0;
+    animation: fadeInRight 1s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.home-img::before,
+.home-img::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: rotate 12s linear infinite;
+}
+
+.home-img::before {
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: conic-gradient(transparent 240deg, var(--blue-primary) 280deg, var(--blue-secondary) 320deg, transparent 360deg);
+    z-index: -1;
+}
+
+.home-img::after {
+    top: -25px;
+    left: -25px;
+    right: -25px;
+    bottom: -25px;
+    background: conic-gradient(transparent, var(--purple-accent), transparent);
+    opacity: 0.5;
+    filter: blur(15px);
+    z-index: -2;
+    animation-direction: reverse;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.img-box {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-card);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 12px solid var(--bg-dark);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Expertise Section */
+.toc-section {
+    padding: 120px 9% 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.toc-section h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.toc-section>p {
+    font-size: 19px;
+    margin-bottom: 70px;
+    opacity: 0.85;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.toc-card {
+    background: rgba(26, 41, 66, 0.7);
+    padding: 45px 35px;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(77, 184, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.toc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(77, 184, 255, 0.15), transparent);
+    transition: left 0.6s;
+}
+
+.toc-card:hover::before {
+    left: 100%;
+}
+
+.toc-card:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(77, 184, 255, 0.4), 0 0 60px var(--blue-glow);
+    border-color: var(--blue-primary);
+}
+
+.toc-card i {
+    font-size: 70px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    display: block;
+    filter: drop-shadow(0 0 20px var(--blue-glow));
+    transition: transform 0.4s;
+}
+
+.toc-card:hover i {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+.toc-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.toc-card p {
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.7;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal.active {
+    display: block;
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 60px;
+    background: linear-gradient(135deg, #1a2942 0%, #0a1628 100%);
+    border-radius: 30px;
+    position: relative;
+    border: 3px solid var(--blue-primary);
+    box-shadow: 0 0 100px var(--blue-glow);
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 45px;
+    color: var(--blue-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+    background: var(--blue-primary);
+    color: #ffffff;
+}
+
+.modal h2 {
+    font-size: 44px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.modal h1 {
+    font-size: 36px;
+    color: var(--blue-primary);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal h3 {
+    color: var(--blue-secondary);
+    margin: 35px 0 15px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.modal h4 {
+    color: var(--blue-primary);
+    margin: 25px 0 15px;
+    font-size: 22px;
+}
+
+.modal-img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    margin: 35px auto;
+    display: block;
+    box-shadow: 0 20px 60px rgba(77, 184, 255, 0.3);
+    border: 4px solid var(--blue-primary);
+}
+
+.modal ul,
+.modal ol {
+    text-align: left;
+    font-size: 18px;
+    line-height: 2;
+    margin: 25px 0;
+    padding-left: 25px;
+}
+
+.modal ul li,
+.modal ol li {
+    margin: 15px 0;
+    position: relative;
+}
+
+.modal ul li::marker {
+    color: var(--blue-primary);
+}
+
+.modal strong {
+    color: var(--blue-primary);
+    font-weight: 600;
+}
+
+.modal p {
+    line-height: 1.9;
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 140px;
+    }
+
+    .home-img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .home-info h1 {
+        font-size: 48px;
+    }
+
+    .home-info h2 {
+        font-size: 32px;
+    }
+
+    .toc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar .logo {
+        font-size: 26px;
+    }
+
+    .navbar ul {
+        gap: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+    }
+
+    .toc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        margin: 20px;
+        padding: 40px 25px;
+    }
+
+    .modal h2 {
+        font-size: 32px;
+    }
+
+    .btn-sci {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .home-img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .home-info h1 {
+        font-size: 38px;
+    }
+
+    .home-info h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cv-modal-content {
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+    .cv-header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .cv-header h2 {
+        font-size: 28px;
+    }
+    .cv-viewer {
+        height: 65vh;
+    }
+}
+/* Scroll Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.toc-card {
+    animation: slideUp 0.6s ease-out forwards;
+    animation-delay: calc(var(--card-index) * 0.1s);
+    opacity: 0;
+}
+/* CV Modal Tabs */
+.cv-tabs {
+    display: flex;
+    margin: 30px 0;
+    border-radius: 50px;
+    overflow: hidden;
+    background: rgba(26, 41, 66, 0.8);
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgba(77, 184, 255, 0.4);
+}
+
+.tab-btn {
+    padding: 16px 40px;
+    background: transparent;
+    border: none;
+    color: #ccc;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s;
+    position: relative;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    color: white;
+    background: var(--gradient-1);
+    box-shadow: 0 0 30px var(--blue-glow);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* My CV Tab Styles */
+.cv-preview-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cv-preview-header h1 {
+    font-size: 42px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.cv-preview-header p {
+    font-size: 18px;
+    opacity: 0.9;
+    color: var(--blue-secondary);
+}
+
+.cv-pdf-container {
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border: 3px solid var(--blue-primary);
+    margin: 30px 0;
+}
+
+.cv-pdf-container iframe {
+    display: block;
+}
+
+.cv-download-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cv-download-btn .btn {
+    padding: 18px 50px;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(77, 184, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom p {
+    font-size: 15px;
+    opacity: 0.8;
+    margin: 10px 0;
+}
+
+.footer-bottom .heart {
+    color: #e91e63;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* Decorative Footer Orb */
+.footer-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--blue-primary), transparent 70%);
+    opacity: 0.15;
+    top: -300px;
+    right: -200px;
+    filter: blur(120px);
+    pointer-events: none;
+    animation: float 25s infinite ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    
+    .footer-links {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 80px 5% 30px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-logo h3 {
+        font-size: 28px;
+    }
+}
+/* SMALL & ELEGANT VIDEO STYLE */
+.video-container-small {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.video-wrapper-small {
+    display: inline-block;
+    max-width: 400px;        /* ← This controls the size (make smaller if you want) */
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 4px solid var(--blue-primary);
+    box-shadow: 
+        0 15px 40px rgba(77, 184, 255, 0.3),
+        0 0 50px rgba(77, 184, 255, 0.15);
+    transition: all 0.4s ease;
+}
+
+.video-wrapper-small:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 25px 60px rgba(77, 184, 255, 0.45),
+        0 0 70px rgba(77, 184, 255, 0.3);
+}
+
+.video-wrapper-small video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+}
+
+/* Extra small screens */
+@media (max-width: 768px) {
+    .video-wrapper-small {
+        max-width: 100%;
+        border-width: 3px;
+        border-radius: 14px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background Orbs -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">Portfolio</a>
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="home">
+        <div class="home-info">
+            <h1>H.D.S.P.DISSANAYAKA</h1>
+            <h2>SA24610061</h2>
+            <p>Helping professionals excel in tech careers with expert guidance in interviews, communication, and
+                personal branding.</p>
+            <div class="btn-sci">
+                <a href="Sajith_Dissanayaka_CV.pdf" download class="btn">Download CV</a>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+                <img src="my1.jpg" alt="Sajith Dissanayaka"
+                    onerror="this.src='https://via.placeholder.com/420x420/1a1f3a/ff9100?text=SAJITH'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <!-- Expertise Section -->
+<section class="toc-section">
+    <h2>My Professional Expertise</h2>
+    <p>I provide specialized training and mentorship in career development and professional excellence</p>
+    <div class="toc-grid">
+        <div class="toc-card" onclick="openModal('professionalModal')" style="--card-index: 1">
+            <i class='bx bx-briefcase'></i>
+            <h3>Introducing Professional Skills</h3>
+            <p>First impressions, workplace etiquette & professional presence</p>
+        </div>
+        <div class="toc-card" onclick="openModal('cvModal')" style="--card-index: 2">
+            <i class='bx bx-file-blank'></i>
+            <h3>CV Writing</h3>
+            <p>ATS-friendly, impactful resumes that get you noticed</p>
+        </div>
+        <div class="toc-card" onclick="openModal('emailModal')" style="--card-index: 3">
+            <i class='bx bx-envelope'></i>
+            <h3>Email Writing & Phone Etiquette</h3>
+            <p>Professional communication skills for modern workplace</p>
+        </div>
+        <div class="toc-card" onclick="openModal('interviewModal')" style="--card-index: 4">
+            <i class='bx bx-chat'></i>
+            <h3>Job Interviews</h3>
+            <p>Technical & behavioral interview mastery with mock sessions</p>
+        </div>
+        <div class="toc-card" onclick="openModal('portfolioModal')" style="--card-index: 5">
+            <i class='bx bx-folder-open'></i>
+            <h3>Portfolio Management</h3>
+            <p>Building stunning portfolios that showcase your best work</p>
+        </div>
+        <div class="toc-card" onclick="openModal('speakingModal')" style="--card-index: 6">
+            <i class='bx bx-microphone'></i>
+            <h3>Speaking Skills</h3>
+            <p>Confident public speaking, presentations & communication</p>
+        </div>
+        <div class="toc-card" onclick="openModal('proposalModal')" style="--card-index: 7">
+            <i class='bx bx-edit-alt'></i>
+            <h3>Writing Project Proposals</h3>
+            <p>Winning proposals for freelancing and internal projects</p>
+        </div>
+        <div class="toc-card" onclick="openModal('diningModal')" style="--card-index: 8">
+            <i class='bx bxs-food-menu'></i>
+            <h3>Dining Etiquette & Table Manners</h3>
+            <p>Professional dining skills for business meals & networking</p>
+        </div>
+        
+        <div class="toc-card" onclick="openModal('researchModal')" style="--card-index: 9">
+            <i class='bx bx-search-alt'></i>
+            <h3>Research</h3>
+            <p>Research skills & design for academic and professional success</p>
+        </div>
+        
+        <div class="toc-card" onclick="openModal('foodFestivalModal')" style="--card-index: 10">
+            <i class='bx bxs-bowl-rice'></i>
+            <h3>Food Festival</h3>
+            <p>A food festival is an event where different types of food are prepared, displayed, and enjoyed by people to celebrate culture and taste.</p>
+        </div>
+        <div class="toc-card" onclick="openModal('task')" style="--card-index: 11">
+            <i class='bx bx-task'></i>
+            <h3>Survival Activity</h3>
+            <p>A survival activity is a task that teaches basic skills needed to stay safe and survive in emergency situations.</p>
+        </div>
+    </div>
+</section>
+    <!-- 1. Professional Skills Modal -->
+    <div id="professionalModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>What are Professional/Employability Skills?</h2>
+            <img src="introduction.png" alt="Professional Skills" class="modal-img" onerror="this.style.display='none'">
+            <ul>
+                <li><strong>Non-technical, interpersonal abilities</strong> essential for workplace success.</li>
+                <li><strong>Transferable across industries</strong> (communication, teamwork, adaptability, leadership).</li>
+            </ul>
+            <h3>Key Skills for Employment</h3>
+            <ul>
+                <li><strong>Communication</strong> – clear expression (verbal, written, non-verbal).</li>
+                <li><strong>Critical Thinking & Problem-Solving</strong> – analyzing & creating solutions.</li>
+                <li><strong>Teamwork</strong> – collaboration, sharing ideas.</li>
+                <li><strong>Adaptability</strong> – handling change.</li>
+                <li><strong>Time Management</strong> – meeting deadlines.</li>
+                <li><strong>Leadership</strong> – guiding others.</li>
+            </ul>
+            <h3>Types of Workplace Skills</h3>
+            <ul>
+                <li><strong>Technical</strong> – job-specific knowledge.</li>
+                <li><strong>Soft</strong> – interpersonal & communication.</li>
+                <li><strong>Transferable</strong> – usable in many roles.</li>
+            </ul>
+            <h3>Values, Beliefs, Attitudes, Character</h3>
+            <ul>
+                <li><strong>Values</strong> – honesty, integrity, respect.</li>
+                <li><strong>Beliefs</strong> – growth mindset, optimism.</li>
+                <li><strong>Attitudes</strong> – positive, tolerant, empathetic.</li>
+                <li><strong>Character</strong> – trustworthiness, fairness, courage.</li>
+            </ul>
+            <h3>Johari Window</h3>
+            <p>A powerful tool for <strong>self-awareness</strong> and <strong>interpersonal understanding</strong>.</p>
+            <h3>Importance of Professional Skills</h3>
+            <ul>
+                <li><strong>Employability</strong> – easier to get jobs.</li>
+                <li><strong>Workplace Success</strong> – productivity & harmony.</li>
+                <li><strong>Career Growth</strong> – promotions & leadership.</li>
+            </ul>
+        </div>
+    </div>
+
+   <!-- 2. CV Writing Mastery + My CV Viewer Modal -->
+<div id="cvModal" class="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        
+        <h2>CV Writing Mastery + My Professional CV & Cover Letter</h2>
+        
+        <!-- Tabs Navigation -->
+        <div class="cv-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'guide')">CV Writing Guide</button>
+            <button class="tab-btn" onclick="openTab(event, 'mycv')">My Actual CV</button>
+            <button class="tab-btn" onclick="openTab(event, 'coverletter')">Cover Letter</button>
+        </div>
+
+        <!-- Tab 1: CV Writing Guide -->
+        <div id="guide" class="tab-content active">
+            <img src="cv.webp"
+                alt="CV Writing" class="modal-img">
+
+            <h3>1. What is a CV?</h3>
+            <p>A document that shows your <strong>education, skills, experience, and achievements</strong> to employers.</p>
+
+            <h3>2. Why is a CV Important?</h3>
+            <ul>
+                <li>Makes your <strong>first impression</strong></li>
+                <li>Helps you get <strong>interview calls</strong></li>
+                <li>Shows your <strong>professionalism</strong></li>
+            </ul>
+
+            <h3>3. Main Parts of a CV</h3>
+            <ol>
+                <li>Personal Information</li>
+                <li>Professional Summary</li>
+                <li>Work Experience</li>
+                <li>Education</li>
+                <li>Skills</li>
+                <li>Achievements / Awards</li>
+            </ol>
+
+            <h3>4. Good CV Features</h3>
+            <ul>
+                <li>Clear structure</li>
+                <li>Simple formatting</li>
+                <li>Bullet points</li>
+                <li>Good spacing</li>
+                <li>No grammar mistakes</li>
+            </ul>
+
+            <h3>5. Tailoring Your CV</h3>
+            <ul>
+                <li>Change your CV according to the job</li>
+                <li>Highlight relevant skills</li>
+                <li>Use keywords from the job description</li>
+                <li>Helps pass <strong>ATS systems</strong></li>
+            </ul>
+
+            <h3>6. Research Before Writing</h3>
+            <ul>
+                <li>Study the company</li>
+                <li>Understand the job role</li>
+                <li>Add matching skills and experience</li>
+            </ul>
+
+            <h3>7. Avoid These Mistakes</h3>
+            <ul>
+                <li>Spelling errors</li>
+                <li>Long paragraphs</li>
+                <li>Irrelevant details</li>
+                <li>No achievements</li>
+                <li>Poor formatting</li>
+            </ul>
+
+            <h2 style="color: white;">Cover Letter</h2>
+            <h3>What is a cover letter?</h3>
+            <p>A cover letter is an accompanying letter that serves as an introduction to your résumé. No résumé should be sent without one. The cover letter is customized
+                 for each position you apply for and acts as an extension of your résumé, reflecting your understanding of the employer’s needs.</p>
+        </div>
+
+        <!-- Tab 2: My Actual CV (PDF Viewer) -->
+        <div id="mycv" class="tab-content">
+            <div class="cv-preview-header">
+                <h1>My Professional CV</h1>
+                <p>See how I applied all the principles above</p>
+            </div>
+
+            <div class="cv-pdf-container">
+                <iframe src="mycv.pdf" 
+                        width="100%" 
+                        height="800px"
+                        style="border: none; border-radius: 15px;"
+                        title="Sajith CV">
+                </iframe>
+            </div>
+
+            <div class="cv-download-btn">
+                <a href="mycv.pdf" download class="btn">
+                    <i class="fas fa-download"></i> Download My CV (PDF)
+                </a>
+            </div>
+        </div>
+
+        <!-- Tab 3: Cover Letter (PDF Viewer) - NEW -->
+        <div id="coverletter" class="tab-content">
+            <div class="cv-preview-header">
+                <h1>My Professional Cover Letter</h1>
+                <p>A real cover letter example I use when applying for jobs</p>
+            </div>
+
+            <div class="cv-pdf-container">
+                <iframe src="coverletter.pdf" 
+                        width="100%" 
+                        height="800px"
+                        style="border: none; border-radius: 15px;"
+                        title="Sajith Cover Letter">
+                </iframe>
+            </div>
+
+            <div class="cv-download-btn">
+                <a href="CoverLetter.pdf" download class="btn">
+                    <i class="fas fa-download"></i> Download Cover Letter (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- 3. Email Writing & Phone Etiquette Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Email Writing & Phone Etiquette</h2>
+            <img src="phoneethics.jpeg" alt="Communication" class="modal-img" onerror="this.style.display='none'">
+            <h4>What I Learn!</h4>
+            <h1>Email Etiquette</h1>
+            <h3>1.1 Use a Professional Email Address</h3>
+            <p>Avoid nicknames. Use formats like: firstname.lastname@email.com</p>
+            <h3>1.2 Clear Subject Line</h3>
+            <p>The subject should show the purpose. Examples:</p>
+            <ul>
+                <li>Request for Appointment</li>
+                <li>Submission of Assignment</li>
+            </ul>
+            <h3>1.3 Use Proper Greetings</h3>
+            <p>Start with:</p>
+            <ul>
+                <li>"Dear Sir/Madam"</li>
+                <li>"Dear [Name]"</li>
+            </ul>
+            <h3>1.4 Keep the Message Clear & Short</h3>
+            <p>Use simple sentences, bullet points, and short paragraphs.</p>
+            <h3>1.5 Professional Tone</h3>
+            <p>No emojis, slang, or jokes.</p>
+            <h3>1.6 Check Grammar & Spelling</h3>
+            <p>Proof-read before sending.</p>
+            <h3>1.7 Proper Closing</h3>
+            <p>Use:</p>
+            <ul>
+                <li>"Thank You"</li>
+                <li>"Best regards,"</li>
+            </ul>
+            <h3>1.8 Use CC/BCC Correctly</h3>
+            <p>Add only necessary recipients.</p>
+            <h3>1.9 Reply Promptly</h3>
+            <p>Respond within 24 hours. Even a short reply is fine: "Received. Will respond shortly."</p>
+            
+            <h1 style="margin-top: 100px;">Phone Etiquette</h1>
+            <h3>2.1 Answer Professionally</h3>
+            <p>Greet politely:</p>
+            <ul>
+                <li>"Good morning, this is [Your Name] speaking."</li>
+            </ul>
+            <h3>2.2 Speak Clearly & Politely</h3>
+            <p>Use a calm voice; avoid shouting or speaking too fast.</p>
+            <h3>2.3 Listen Carefully</h3>
+            <p>Don't interrupt; let the caller finish.</p>
+            <h3>2.4 Avoid Background Noise</h3>
+            <p>Answer in a quiet place.</p>
+            <h3>2.5 Be Respectful</h3>
+            <p>Use polite phrases:</p>
+            <ul>
+                <li>"May I know who is speaking?"</li>
+                <li>"Could you please repeat that?"</li>
+            </ul>
+            <h3>2.6 If You Need to Put Them on Hold</h3>
+            <p>Ask first:</p>
+            <ul>
+                <li>"May I place you on hold for a moment?" Don't keep them waiting too long.</li>
+            </ul>
+            <h3>2.7 Take Notes</h3>
+            <p>Write important details, especially in work-related calls.</p>
+            <h3>2.8 End Politely</h3>
+            <p>"Thank you for calling. Have a nice day."</p>
+            
+            <h1 style="margin-top: 100px;">Importance Of Email & Phone Etiquette</h1>
+            <ul>
+                <li>Shows professionalism and respect.</li>
+                <li>Clear communication avoids misunderstandings.</li>
+                <li>Proper greetings, tone, grammar, and structure are essential.</li>
+                <li>Listening is as important as speaking in phone calls.</li>
+                <li>Both require politeness and clarity at all times.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 4. Job Interviews Modal -->
+    <div id="interviewModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Job Interview Mastery</h2>
+            <img src="interview.png"
+                alt="Job Interview" class="modal-img">
+            <h3>1. What is a Job Interview?</h3>
+            <p>A conversation between you and the company to check:</p>
+            <ul>
+                <li>Your <strong>skills, experience, personality</strong></li>
+                <li>Whether you are the <strong>right match</strong> for the job</li>
+                <li>You also check if the job suits <strong>you</strong></li>
+            </ul>
+            <h3>2. Best Interview Strategy</h3>
+            <p>Ask yourself:</p>
+            <ul>
+                <li>What do I want the interviewer to know about me?</li>
+                <li>What weaknesses should I hide or minimize?</li>
+                <li>What do I need to know about the company?</li>
+            </ul>
+            <h3>3. Communication Skills (Very Important!)</h3>
+            <p>Interview success depends on communication:</p>
+            <ul>
+                <li><strong>Non-verbal (93%)</strong>: Body language (55%) + Tone of voice (38%)</li>
+                <li><strong>Words only 7%</strong></li>
+            </ul>
+            <h3>4. Non-Verbal Skills</h3>
+            <ul>
+                <li>Smile and greet</li>
+                <li>Maintain eye contact</li>
+                <li>Sit straight</li>
+                <li>Don't show nervousness</li>
+                <li>Show enthusiasm</li>
+                <li>Read interviewer's body cues</li>
+            </ul>
+            <h3>5. Successful Candidates Do This</h3>
+            <ul>
+                <li>Use company name</li>
+                <li>Show research</li>
+                <li>Use specific examples</li>
+                <li>Use technical terms</li>
+                <li>Ask questions</li>
+                <li>Make eye contact</li>
+                <li>Speak more than interviewer</li>
+                <li>Give clear, confident answers</li>
+            </ul>
+            <h3>6. Active Listening Tips</h3>
+            <ul>
+                <li>Pay attention</li>
+                <li>Show that you listen</li>
+                <li>Ask for clarification</li>
+                <li>Don't judge</li>
+                <li>Respond nicely</li>
+            </ul>
+            <h3>7. 6 C's of Communication (+1)</h3>
+            <ul>
+                <li>Clear · Concise · Correct · Complete · Concrete · Courteous · <strong>Confident</strong></li>
+            </ul>
+            <h3>8. How to Describe Yourself</h3>
+            <ul>
+                <li><strong>Personality/Strengths:</strong> "I'm good at meeting deadlines", "My strength is communication"</li>
+                <li><strong>Education:</strong> "I have a diploma in…", "I graduated from…"</li>
+                <li><strong>Experience:</strong> "I have 2 years of experience in…", "I worked as…"</li>
+                <li><strong>Future Goals:</strong> "I want to further my career in…", "I can contribute by…"</li>
+            </ul>
+            <h3>9. Interview Answer Structure (STAR Method)</h3>
+            <ol>
+                <li>Introduce your example</li>
+                <li>Explain what your goal was</li>
+                <li>Explain what actions you took</li>
+                <li>Explain the result (success)</li>
+            </ol>
+            <h3>10. Other Interview Basics</h3>
+            <ul>
+                <li><strong>Wear:</strong> Formal, neat</li>
+                <li><strong>Bring:</strong> CV, certificates, notebook</li>
+                <li><strong>Location:</strong> Know where to go before</li>
+                <li><strong>Practice:</strong> Do mock interviews!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. Portfolio Management Modal -->
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Portfolio Management Mastery</h2>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Portfolio" class="modal-img">
+            <h3>1. What is a Portfolio?</h3>
+            <p>A portfolio is a <strong>collection of your work, achievements, skills, and documents</strong> used to show your abilities to others.</p>
+            <h3>2. Uses of a Portfolio</h3>
+            <ul>
+                <li>Job applications – to show skills and past work</li>
+                <li>Career promotions – to prove achievements</li>
+                <li>Creative fields – design, writing, photography</li>
+                <li>Education – show learning progress</li>
+                <li>University admissions – show talents and activities</li>
+                <li>Teaching – collect lesson plans, student work</li>
+                <li>Freelancing & consulting – show past projects</li>
+                <li>Business & entrepreneurship – show plans and products</li>
+                <li>Networking & personal branding</li>
+                <li>Career change – show transferable skills</li>
+            </ul>
+            <h3>3. Types of Portfolios</h3>
+            <ol>
+                <li><strong>Personal Portfolio</strong><br>Shows your creative work (art, design, writing, photography).</li>
+                <li><strong>Career / Dossier Portfolio</strong><br>Includes resume, cover letter, work documents.</li>
+                <li><strong>Employment Portfolio</strong><br>Shows your workplace achievements, certificates, performance.</li>
+                <li><strong>Assessment Portfolio</strong><br>Shows your learning progress, assignments, projects (used in schools/universities).</li>
+            </ol>
+            <h3>4. How to Create an Assessment Portfolio (17 Steps)</h3>
+            <ol>
+                <li>Know your purpose</li>
+                <li>Know your audience</li>
+                <li>Choose format – physical or digital</li>
+                <li>Collect materials – certificates, work, projects</li>
+                <li>Organize sections – intro, CV, education, work, skills</li>
+                <li>Give context – explain each item</li>
+                <li>Highlight achievements</li>
+                <li>Keep it professional and neat</li>
+                <li>Add reflections – strengths, weaknesses</li>
+                <li>Update regularly</li>
+                <li>Ask for feedback</li>
+                <li>Customize for each purpose</li>
+                <li>Practice presenting</li>
+                <li>Keep backups</li>
+                <li>Protect privacy</li>
+                <li>Use digital tools smartly</li>
+                <li>Keep improving</li>
+            </ol>
+            <h3>5. Best Online Tools to Create Portfolios</h3>
+            <ul>
+                <li>LinkedIn</li>
+                <li>Behance (creative)</li>
+                <li>Google Sites</li>
+                <li>WordPress</li>
+                <li>Wix</li>
+                <li>Weebly</li>
+                <li>Squarespace</li>
+                <li>Adobe Portfolio</li>
+                <li>GitHub Pages (for programmers)</li>
+                <li>Cargo</li>
+                <li>Portfoliobox</li>
+                <li>Journo Portfolio (writers)</li>
+                <li>Pathbrite (students)</li>
+            </ul>
+            <p style="text-align:center; font-size:22px; margin-top:50px; color:var(--orange-primary); font-weight:700;">
+                Your Portfolio = Your Professional Story
+            </p>
+        </div>
+    </div>
+
+    <!-- 6. Speaking Skills Modal -->
+    <div id="speakingModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Mastering Confident & Effective Speaking in Meetings</h2>
+            <img src="meeting1.jpg"
+                alt="Professional Meeting" class="modal-img">
+            <h3>1. Meeting Terminology</h3>
+            <ul>
+                <li><strong>Agenda</strong> – List of topics to discuss</li>
+                <li><strong>Minutes</strong> – Written record of what happened</li>
+                <li><strong>Objectives</strong> – Goals of the meeting</li>
+                <li><strong>Facilitator/Chairperson</strong> – Person who leads the meeting</li>
+                <li><strong>Participants</strong> – People attending</li>
+                <li><strong>Action Items</strong> – Tasks assigned</li>
+                <li><strong>AOB (Any Other Business)</strong> – Topics at the end</li>
+            </ul>
+            <h3>2. Types of Meetings</h3>
+            <ul>
+                <li><strong>Staff Meeting</strong> – Regular team updates</li>
+                <li><strong>Project Meeting</strong> – Discuss project progress</li>
+                <li><strong>Brainstorming Session</strong> – Generate new ideas</li>
+                <li><strong>Problem-Solving Meeting</strong> – Fix specific issues</li>
+                <li><strong>Annual General Meeting (AGM)</strong> – Yearly formal meeting</li>
+            </ul>
+            <h3>3. How to Plan a Meeting (Checklist)</h3>
+            <ul>
+                <li>What is the <strong>purpose</strong> of the meeting?</li>
+                <li>Who <strong>needs to attend</strong>?</li>
+                <li>What <strong>equipment</strong> is required?</li>
+                <li>Is it <strong>formal or informal</strong>?</li>
+                <li>What documents to prepare? (<strong>Agenda, previous minutes</strong>)</li>
+                <li>How long should it last?</li>
+            </ul>
+            <h3>4. How to Contribute Effectively</h3>
+            <ul>
+                <li>Speak <strong>clearly and confidently</strong></li>
+                <li>Use <strong>short and direct</strong> sentences</li>
+                <li>Support points with <strong>examples</strong></li>
+                <li>Listen actively before responding</li>
+                <li>Be respectful even when disagreeing</li>
+            </ul>
+            <h3>5. Meeting Roles & Responsibilities</h3>
+            <ul>
+                <li><strong>Chairperson</strong> – Opens, leads, closes meeting</li>
+                <li><strong>Secretary</strong> – Takes minutes, distributes agenda</li>
+                <li><strong>Timekeeper</strong> – Ensures schedule is followed</li>
+                <li><strong>Presenter</strong> – Shares reports/data</li>
+                <li><strong>Participant</strong> – Contributes ideas</li>
+            </ul>
+            <h3>6. Writing a Professional Meeting Agenda</h3>
+            <ul>
+                <li>Title, date, time, location</li>
+                <li>List topics in order</li>
+                <li>Include time allocation</li>
+                <li>State purpose (Inform/Discuss/Decide)</li>
+                <li>Attach supporting documents</li>
+            </ul>
+            <h3>7. Facilitating a Meeting Effectively</h3>
+            <ul>
+                <li>Start and end on time</li>
+                <li>Encourage everyone to speak</li>
+                <li>Keep discussion on track</li>
+                <li>Summarize key points</li>
+                <li>Handle conflicts calmly</li>
+            </ul>
+            <h3>8. Common Meeting Challenges & Solutions</h3>
+            <ul>
+                <li><strong>Dominating speakers</strong> → Politely interrupt</li>
+                <li><strong>Silent participants</strong> → Ask direct questions</li>
+                <li><strong>Off-topic talk</strong> → Use "parking lot"</li>
+                <li><strong>Running out of time</strong> → Prioritize items</li>
+            </ul>
+            <h3>9. Evaluating a Meeting</h3>
+            <ul>
+                <li>Did we achieve objectives?</li>
+                <li>What went well?</li>
+                <li>What can be improved?</li>
+                <li>Collect quick feedback</li>
+            </ul>
+            <p style="text-align:center; font-size:20px; margin-top:40px; color:var(--orange-primary);">
+                <strong>Practice → Confidence → Leadership</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- 7. Writing Project Proposals Modal -->
+    <div id="proposalModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Writing Professional Project Proposals</h2>
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Project Proposal" class="modal-img">
+            <h3>1. What is a Project?</h3>
+            <p>A project is a big task that requires:</p>
+            <ul>
+                <li><strong>Time</strong></li>
+                <li><strong>Effort</strong></li>
+                <li><strong>Planning</strong></li>
+            </ul>
+            <p>Before starting, you must write a <strong>project proposal</strong> to explain:</p>
+            <ul>
+                <li>What you want to do</li>
+                <li>Why you want to do it</li>
+                <li>How you will do it</li>
+            </ul>
+            <h3>2. Types of Project Proposals</h3>
+            <ul>
+                <li><strong>External Proposal</strong> – For outside organizations (win contracts)</li>
+                <li><strong>Internal Proposal</strong> – For people inside your company (get approval)</li>
+            </ul>
+            <h3>3. Structure of an External Proposal</h3>
+            <ul>
+                <li><strong>1. Executive Summary</strong> – Short, powerful overview</li>
+                <li><strong>2. Management Section</strong> – Who will work, their skills, timeline</li>
+                <li><strong>3. Financial Section</strong> – Detailed cost breakdown</li>
+            </ul>
+            <h3>4. Writing an Internal Proposal</h3>
+            <p><strong>A. Planning the Proposal</strong></p>
+            <ul>
+                <li>Understand your audience</li>
+                <li>Know their knowledge level & decision-making power</li>
+                <li>Use visuals (charts, diagrams)</li>
+                <li>Ask: What is the problem? → What is the solution? → Can & should it be done?</li>
+            </ul>
+            <p><strong>B. Writing the Proposal</strong></p>
+            <p>Start with a strong <strong>Introduction</strong> that includes:</p>
+            <ul>
+                <li>Purpose of the proposal</li>
+                <li>Your credibility</li>
+                <li>Problem background & importance</li>
+                <li>Proposed solution</li>
+                <li>Structure of the document</li>
+            </ul>
+            <h3>5. Discussion Section (Main Body)</h3>
+            <p>The heart of persuasion. Include:</p>
+            <ul>
+                <li>Detailed problem description</li>
+                <li>Strong, clear solution</li>
+                <li>Implementation schedule</li>
+                <li>People involved</li>
+                <li>Resources needed</li>
+                <li>Expected benefits</li>
+            </ul>
+            <h3>6. Summary</h3>
+            <p>A winning project proposal clearly answers:</p>
+            <ul>
+                <li><strong>What?</strong> – The project</li>
+                <li><strong>Why?</strong> – The need/importance</li>
+                <li><strong>How?</strong> – Plan, team, budget</li>
+                <li><strong>Who?</strong> – Credible team</li>
+                <li><strong>When?</strong> – Realistic timeline</li>
+            </ul>
+            <p style="text-align:center; font-size:20px; margin-top:40px; color:var(--orange-primary);">
+                <strong>A Great Proposal = Approved Project!</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- 8. Dining Etiquette & Table Manners Modal -->
+    <div id="diningModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Professional Dining Etiquette & Table Manners</h2>
+            <img src="dinning2.webp" alt="Formal Dining Table" class="modal-img" onerror="this.style.display='none'">
+            <img src="dinning1.gif" alt="Formal Dining Table" class="modal-img" onerror="this.style.display='none'">
+            <h3>1. Why Table Etiquette Matters</h3>
+            <ul>
+                <li>Shows <strong>respect and courtesy</strong></li>
+                <li>People judge your behavior at the table</li>
+                <li>Dining is a <strong>social ritual</strong> that reflects your upbringing and professionalism</li>
+            </ul>
+            <h3>2. Golden Rules (True/False Answers)</h3>
+            <ul>
+                <li>Never put dirty utensils back on the table</li>
+                <li>Eat French fries with a <strong>fork</strong> at formal events</li>
+                <li>Never remove food from teeth at the table</li>
+                <li>Don't point out others' mistakes</li>
+                <li>Never rearrange seating cards</li>
+            </ul>
+            <h3>3. How to Read a Place Setting</h3>
+            <ul>
+                <li>Bread plate = <strong>left</strong> ("b")</li>
+                <li>Drinks = <strong>right</strong> ("d")</li>
+                <li>Start utensils from the <strong>outside → inward</strong></li>
+            </ul>
+            <h3>4. Bread & Butter Etiquette</h3>
+            <ul>
+                <li>Break bread into <strong>small pieces</strong></li>
+                <li>Take butter <strong>once</strong> onto your bread plate</li>
+                <li>Never double-dip into shared butter</li>
+            </ul>
+            <h3>5. Salt & Pepper</h3>
+            <p>They are "married" — always pass <strong>both together</strong></p>
+            <h3>6. Soup Etiquette</h3>
+            <ul>
+                <li>Spoon <strong>away</strong> from you</li>
+                <li>Only sip from cup if no large rim and only broth remains</li>
+                <li>Rest spoon on <strong>saucer</strong>, not in bowl</li>
+            </ul>
+            <h3>7. How to Hold Silverware</h3>
+            <ul>
+                <li><strong>Continental Style</strong>: Don't switch hands, fork tines down</li>
+                <li><strong>American Style</strong>: Cut → put knife down → switch fork to right hand</li>
+            </ul>
+            <h3>8. Removing Food (U.F.O.)</h3>
+            <p>Use the <strong>same utensil</strong> that put the food in your mouth. Never hide in napkin.</p>
+            <h3>9. Napkin Rules</h3>
+            <ul>
+                <li>Place on lap immediately after host</li>
+                <li>Never use as a bib</li>
+                <li>When leaving temporarily: on chair</li>
+                <li>When finished: loosely beside plate</li>
+            </ul>
+            <h3>10. Burping, Sneezing & Body Functions</h3>
+            <ul>
+                <li>Cover mouth with napkin quietly</li>
+                <li>Never blow nose at table</li>
+                <li>Excuse yourself if needed</li>
+            </ul>
+            <h3>11. Plate Signals</h3>
+            <ul>
+                <li><strong>Not Finished (Continental)</strong>: Inverted "V", fork tines down</li>
+                <li><strong>Not Finished (American)</strong>: Knife & fork crossed</li>
+                <li><strong>Finished (Both)</strong>: Knife & fork together at <strong>4:25 position</strong></li>
+            </ul>
+            <p style="text-align:center; font-size:22px; margin-top:50px; color:var(--orange-primary); font-weight:600;">
+                Master the table → Master the room.
+            </p>
+        </div>
+    </div>
+            <!--research modal-->
+    <div id="researchModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Research skills & Research Design</h2>
+            <img src="research.jpg" alt="Formal Dining Table" class="modal-img" onerror="this.style.display='none'">
+           
+            <h3>1.What is Research?</h3>
+            <p>Research is a systematic and organized process of collecting, analyzing, and interpreting information to answer a question or solve a problem.</p>
+            <h3>2.Good Research Study is:</h3>
+            <ul>
+                <li>Structured</li>
+                <li>Logical</li>
+                <li> Clear</li>
+                <li>Evidence-based</li>
+            </ul>
+            <h3>3.what is Research Study Design:</h3>
+            <p>Research design is the overall plan or blueprint of how the research will be carried out.</p>
+            <p>It's Include:</p>
+           
+            <ul>
+                <li>What data is needed</li>
+                <li> How data will be collected</li>
+                <li>How data will be analyzed</li>
+            </ul>
+            <h3 style="color: white;">Type of Research Design</h3>
+            <h3>3.Qualitative Research Design </h3>
+            <p>Focuses on: </p>
+            <ul>
+                <li>Opinions</li>
+                <li>Experience</li>
+                <li>Human behavior</li>
+            </ul>
+            <p>Method include</p>
+            <ul>
+                <li>Interviews</li>
+                <li>Focus Group</li>
+                <li>observation</li>
+            </ul>
+            <h3>3.1 Quantitative Research Design </h3>
+            <p>Focuses on: </p>
+            <ul>
+                <li>surveys</li>
+                <li>Experiment</li>
+                <li>Numeric Test</li>
+            </ul>
+            <h3>3.2 Mix Method Research</h3>
+            <p>A combination of quantitative and qualitative approaches. Useful
+                when both numerical results and detailed explainations are
+                required</p>
+                <h3>4.Component of Research Proposal writting</h3>
+            <ul>
+                <li>Title page</li>
+                <li>Table of content</li>
+                <li>introduction</li>
+                <li>problem statement</li>
+                <li>objective</li>
+                <li>literature review</li>
+                <li>Methodology</li>
+                <li>Timeline</li>
+                <li>Budget</li>
+            </ul>
+            <p> Internal proposals are shorter and used within the organizations</p>
+            <p> External proposals are more detailed and usd when requesting funding or approval</p>
+
+            <h3>5. Sampling Techniques</h3>
+            <p>Sampling helps select individuals or elements that represent the whole population</p>
+            
+            <ul>
+                <li>.Random Sampling: Every member has an equal chance of being selected</li>
+                <li>.Stratified Sampling: Population in divided into groups, and samples are taken from each group</li>
+                <li>.Cluster Sampling: Population is divided into clusters and entire clusters are selected</li>
+                <li>Systematic Sampling: Selecting every nth member from a list</li>
+                
+            </ul>
+            <h3>6.Writing an Abstract</h3>
+            <p>We learned that an abstarct should be:</p>
+            <ul>
+                <li>short</li>
+                <li>clear</li>
+                <li>About 150-250 Words</li>
+                <li>A summery of entire research</li>
+            </ul>
+
+            <p>An abstarct usually contains</p>
+            <ul>
+                <li>Background</li>
+                <li>Purpose</li>
+                <li>Method</li>
+                <li>Result</li>
+                <li>Conclusion</li>
+            </ul>
+            <h3>7.Key Takeaway</h3>
+            <ul>
+                <li>Research is a structured and systematic way of answering questions.</li>
+                <li>Research design acts as the blueprint for the entire study.</li>
+                <li>Qualitative research = descriptive and exploratory.</li>
+                <li>Quantitative research = numerical data + statistical analysis.</li>
+                <li>Mixed methods combine both qualitative and quantitative approaches to give deeper insights.</li>
+                <li>Sampling techniques help collect accurate and representative data.</li>
+                <li>A good proposal and abstract require clarity, proper structure, and relevance.</li>
+            </ul>
+    </div>
+    </div>
+
+   <!-- Food Festival Modal – SMALL & BEAUTIFUL VIDEO -->
+<div id="foodFestivalModal" class="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        <h2>Food Festival Experience</h2>
+
+        <!-- SMALL VIDEO (max 650px wide – perfect for portfolios) -->
+        <div class="video-container-small">
+            <div class="video-wrapper-small">
+                <video controls poster="food1.jpg" preload="metadata">
+                    <source src="food.mp4" type="video/mp4">
+                    <source src="food.mp4" type="video/webm">
+                    Your browser does not support the video.
+                </video>
+            </div>
+        </div>
+
+        <!-- Optional fallback images -->
+        <img src="food1.jpg" alt="Food Festival" class="modal-img" onerror="this.style.display='none'">
+        <img src="food3.jpg" alt="Food Festival" class="modal-img" onerror="this.style.display='none'">
+
+        <h3>Objectives</h3>
+        <ul>
+            <li>Promote teamwork and creativity by organizing a successful food festival event.</li>
+            <li>Develop communication and marketing skills through planning and presentation.</li>
+        </ul>
+
+        <h3>Topics Covered</h3>
+        <ul>
+            <li>Event Planning & Management</li>
+            <li>Food Presentation and Marketing</li>
+            <li>Cultural Respect & Teamwork</li>
+        </ul>
+
+        <h3>What I Learned</h3>
+        <p>I learned the importance of planning, coordination, leadership, and time management. This hands-on experience greatly improved my communication, problem-solving, and teamwork skills.</p>
+
+        <p style="text-align:center; font-size:24px; margin-top:50px; color:#4db8ff; font-weight:700;">
+            Food brings people together.
+        </p>
+    </div>
+</div>
+
+<!--survivel activity-->
+
+<!-- NEW: Survival Activity with PDF -->
+
+<!-- Survival Activity – With 2 Tabs -->
+<div id="task" class="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        <h2>Survival Activity – Crisis Leadership Exercise</h2>
+
+        <!-- TABS -->
+        <div class="cv-tabs" style="margin: 35px auto 40px;">
+            <button class="tab-btn active" onclick="openTab(event, 'overview')">Overview & Summary</button>
+            <button class="tab-btn" onclick="openTab(event, 'fullreport')">Full Report (PDF)</button>
+        </div>
+
+        <!-- TAB 1: Overview & Summary -->
+        <div id="overview" class="tab-content active">
+            <img src="s.jpg" alt="Survival Activity" class="modal-img" onerror="this.style.display='none'">
+
+            <h3 style="color: var(--blue-primary); margin-top: 30px;">Key Skills Demonstrated</h3>
+            <ul style="font-size: 18px; line-height: 2.3; columns: 2; gap: 40px; margin: 25px 0;">
+                <li>Strategic Thinking</li>
+                <li>Group Communication</li>
+                <li>Prioritization Under Pressure</li>
+                <li>Delegation & Role Assignment</li>
+                <li>Crisis Leadership</li>
+                <li>Decision-Making with Limited Resources</li>
+            </ul>
+
+            <h3 style="color: var(--blue-primary); margin-top: 35px;">Decision Criteria</h3>
+            <ul style="font-size: 17px; line-height: 2; margin: 20px 0;">
+                <li>Survival essentials (food, water, navigation, medical)</li>
+                <li>Team dynamics & morale</li>
+                <li>Long-term rescue probability</li>
+            </ul>
+
+            <h3 style="color: var(--blue-primary);">Our Final Chosen Items</h3>
+            <ul style="font-size: 17px; line-height: 2.1; margin: 20px 0;">
+                <li>Jungle Machete – Clear path & build shelter</li>
+                <li>Compass + Satellite Map – Accurate navigation</li>
+                <li>Portable Water Purifier Tablets – Safe drinking water</li>
+                <li>First Aid Kit – Handle injuries</li>
+                <li>Signaling Mirror – Maximize rescue chances</li>
+            </ul>
+
+            <p style="margin-top: 30px; font-size: 19px; line-height: 1.9; opacity: 0.95; background: rgba(77,184,255,0.1); padding: 25px; border-radius: 16px; border-left: 4px solid var(--blue-primary);">
+                This intense activity taught our team how to stay calm under extreme pressure, communicate clearly, and make life-critical decisions together — skills directly transferable to real-world leadership and crisis management.
+            </p>
+        </div>
+
+        <!-- TAB 2: Full PDF Report -->
+        <div id="fullreport" class="tab-content">
+            <div class="document-header">
+                <h1>Full Survival Activity Report</h1>
+                <p>Detailed documentation • Team decisions • Reflection & analysis</p>
+            </div>
+
+            <div class="document-pdf">
+                <iframe src="ps servi'.pdf" title="Survival Activity Full Report"></iframe>
+            </div>
+
+            <div class="document-download">
+                <a href="ps servi'.pdf" download class="btn">
+                    Download Complete Report (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="footer-bottom">
+        <p>© 2025 Saith Dissanayaka. All rights reserved.</p>
+        <!--<p>Made with <span class="heart">♥</span> & lots of coffee</p>-->
+    </div>
+
+    <!-- Floating Footer Orb (decorative) -->
+    <div class="footer-orb"></div>
+</footer>
+
+    <!-- JavaScript for Modals -->
+    <script>
+// Universal function to open any modal
+function openModal(modalId) {
+    document.getElementById(modalId).classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+// Universal function to close ALL modals
+function closeModal() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.classList.remove('active');
+    });
+    document.body.style.overflow = "auto";
+}
+
+// Close modal when clicking on the background (outside content)
+window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+});
+
+// Close modal when pressing ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Tab functionality for CV modal (kept intact)
+function openTab(evt, tabName) {
+    const tabContents = document.getElementsByClassName("tab-content");
+    const tabBtns = document.getElementsByClassName("tab-btn");
+
+    // Hide all tab contents
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+    }
+    // Remove active class from all buttons
+    for (let i = 0; i < tabBtns.length; i++) {
+        tabBtns[i].classList.remove("active");
+    }
+
+    // Show selected tab and mark button as active
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+</body>
+
+</html>
